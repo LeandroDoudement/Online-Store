@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import { getCategories } from './services/api';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
 
 class App extends React.Component {
   render() {
-    console.log(getCategories());
-
     return (
-      <div className="App">
-        <h1>Trybe</h1>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Routes />
+        </div>
+      </BrowserRouter>
     );
   }
 }
