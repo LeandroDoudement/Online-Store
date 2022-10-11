@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Home.css';
 import propTypes from 'prop-types';
 import Product from '../components/Product';
 import { getProductsFromCategoryAndQuery } from '../services/api';
@@ -56,9 +57,11 @@ class Home extends React.Component {
     const { searchField,
       checkValue, searchResult } = this.state;
     return (
-      <div>
-        <div>
+      <div className="divHome">
+        <div className="divHomeForm">
+          <Link to="/cart" data-testid="shopping-cart-button">Go to cart page</Link>
           <input
+            autoComplete="off"
             value={ searchField }
             onChange={ this.onChange }
             name="searchField"
@@ -66,30 +69,32 @@ class Home extends React.Component {
             data-testid="query-input"
           />
           <button
+            className="buttonSearch"
             type="button"
             data-testid="query-button"
             onClick={ this.handleClick }
           >
             Pesquisar
           </button>
+          <h3
+            data-testid="home-initial-message"
+          >
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </h3>
+          <Categories getProducts={ this.getCategorieProducts } />
         </div>
-        <Categories getProducts={ this.getCategorieProducts } />
-        <h3
-          data-testid="home-initial-message"
-        >
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </h3>
-        {checkValue ? searchResult.results.map((element, index) => (
-          <Product
-            getCartItens={ this.getCartItens }
-            objItem={ element }
-            key={ index }
-            productName={ element.title }
-            productPrice={ Number(element.price) }
-            productImage={ element.thumbnail }
-            productId={ element.id }
-          />)) : <p>Nenhum produto foi encontrado</p>}
-        <Link to="/cart" data-testid="shopping-cart-button">Go to cart page</Link>
+        <div className="divHomeProducts">
+          {checkValue ? searchResult.results.map((element, index) => (
+            <Product
+              getCartItens={ this.getCartItens }
+              objItem={ element }
+              key={ index }
+              productName={ element.title }
+              productPrice={ Number(element.price) }
+              productImage={ element.thumbnail }
+              productId={ element.id }
+            />)) : <p>Nenhum produto foi encontrado</p>}
+        </div>
       </div>
     );
   }
