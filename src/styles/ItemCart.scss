@@ -1,0 +1,93 @@
+.divItemscart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px;
+  border: 1px solid #ccc;
+
+  .intemsCart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 900px;
+    height: 210px;
+    padding: 20px;
+    border: 1px solid gray;
+
+    .image {
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: left;
+      justify-content: left;
+      width: 250px;
+      height: 150px;
+      border: 1px solid rgb(191, 188, 188);
+
+      button {
+        width: 60px;
+        height: 20px;
+        border: none;
+        background-color: rgb(164, 53, 53);
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: rgb(255, 0, 0);
+          color: white;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .quantity {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 120px;
+      height: 100px;
+      border: 1px solid rgb(191, 188, 188);
+
+      button {
+        width: 30px;
+        height: 20px;
+        border: none;
+        background-color: rgb(164, 53, 53);
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: rgb(255, 0, 0);
+          color: white;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .itemsCart__title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 20px;
+      width: 250px;
+      height: 100px;
+      padding: 10px;
+      color: rgba(190, 37, 37, 0.611);
+      border: 1px solid rgb(191, 188, 188);
+      border-radius: 5px;
+    }
+
+  }
+}

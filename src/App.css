@@ -1,8 +1,8 @@
 .App {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
   background-color: aliceblue;
-  width: 100%;
+  box-sizing: border-box;
   height: 100%;
-}/*# sourceMappingURL=App.css.map */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

@@ -1,133 +1,150 @@
 .divHome {
   display: flex;
   flex-direction: row;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto , sans-serif;
 }
+
 .divHome .divHomeForm {
   display: flex;
   flex-direction: column;
   padding: 10px;
   width: 20%;
 }
+
 .divHome .divHomeForm a {
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  padding: 4px;
-  border: none;
   background-color: rgb(7, 94, 7);
-  margin: 10px auto;
-  width: 110px;
-  height: 30px;
-  transition: all 0.5s ease-in-out;
+  border: none;
   border-radius: 10px;
+  color: white;
+  font-size: 13px;
+  height: 30px;
+  margin: 10px auto;
+  padding: 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  width: 110px;
 }
+
+.divHome .product a {
+  color: gray;
+  text-decoration: none;
+}
+
 .divHome .divHomeForm a:hover {
   background-color: rgb(31, 148, 31);
   color: white;
 }
+
 .divHome .divHomeForm input {
-  outline: none;
   border: 1px solid gray;
   border-radius: 2px;
-  padding: 5px;
+  height: 25px;
   margin: 10px auto;
-  width: 90%;
-  height: 25px;
-}
-.divHome .divHomeForm .buttonSearch {
   outline: none;
-  border: none;
-  font-size: 15px;
-  border-radius: 2px;
-  margin: 5px auto;
+  padding: 5px;
   width: 90%;
-  height: 25px;
-  color: white;
-  background-color: rgb(7, 94, 7);
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
 }
+
+.divHome .divHomeForm .buttonSearch {
+  background-color: rgb(7, 94, 7);
+  border: none;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  height: 25px;
+  margin: 5px auto;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  width: 90%;
+}
+
 .divHome .divHomeForm .buttonSearch:hover {
   background-color: rgb(31, 148, 31);
 }
+
 .divHome h3 {
-  text-align: center;
   font-size: 15px;
   margin: 10px auto;
-}
-.divHome h1 {
   text-align: center;
+}
+
+.divHome h1 {
   font-size: 20px;
   margin: 10px auto;
+  text-align: center;
 }
+
 .divHome .buttonCategories {
-  outline: none;
+  background-color: rgb(7, 94, 7);
   border: none;
-  font-size: 15px;
   border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  height: 30px;
   margin: 5px auto;
   margin-left: 13px;
-  width: 90%;
-  height: 30px;
-  color: white;
-  background-color: rgb(7, 94, 7);
+  outline: none;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
+  width: 90%;
 }
+
 .divHome .buttonCategories:hover {
   background-color: rgb(31, 148, 31);
   scale: 1.1;
 }
+
 .divHome .divHomeProducts {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 80%;
   border-left: 5px solid green;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-around;
   padding: 3px;
   text-align: center;
+  width: 80%;
 }
+
 .divHome .product {
-  display: flex;
-  flex-direction: column;
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
+  display: flex;
+  flex-direction: column;
   height: 320px;
+  margin: 10px;
+  padding: 10px;
   transition: all 0.5s ease-in-out;
+  width: 200px;
 }
+
 .divHome .product img {
-  width: 150px;
-  margin: 10px auto;
   height: 150px;
+  margin: 10px auto;
+  width: 150px;
 }
+
 .divHome .product p {
-  padding: 5px;
-  font-size: 13px;
   border: 1px solid gray;
+  font-size: 13px;
+  padding: 5px;
 }
+
 .divHome .product button {
-  outline: none;
-  border: none;
-  font-size: 15px;
-  border-radius: 2px;
-  margin: 0 auto;
-  width: 90%;
-  height: 25px;
-  color: white;
   background-color: rgb(7, 94, 7);
-  transition: all 0.5s ease-in-out;
+  border: none;
+  border-radius: 2px;
+  color: white;
   cursor: pointer;
+  font-size: 15px;
+  height: 25px;
+  margin: 0 auto;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  width: 90%;
 }
+
 .divHome .product button:hover {
   background-color: rgb(31, 148, 31);
 }
-.divHome .product a {
-  text-decoration: none;
-  color: gray;
-}/*# sourceMappingURL=Home.css.map */

@@ -1,0 +1,92 @@
+.divItemscart {
+  align-items: center;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 30px 20px;
+  width: 100%;
+}
+
+.divItemscart .intemsCart {
+  align-items: center;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  height: 210px;
+  justify-content: space-between;
+  min-width: 900px;
+  padding: 20px;
+}
+
+.divItemscart .intemsCart .image {
+  align-items: left;
+  border: 1px solid rgb(191, 188, 188);
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  justify-content: left;
+  padding: 10px;
+  width: 250px;
+}
+
+.divItemscart .intemsCart .image button {
+  background-color: rgb(164, 53, 53);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  height: 20px;
+  transition: all 0.3s ease-in-out;
+  width: 60px;
+}
+
+.divItemscart .intemsCart .quantity button {
+  background-color: rgb(164, 53, 53);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  height: 20px;
+  transition: all 0.3s ease-in-out;
+  width: 30px;
+}
+
+.divItemscart .intemsCart .image button:hover {
+  background-color: red;
+  color: white;
+  transform: scale(1.1);
+}
+
+.divItemscart .intemsCart .quantity {
+  align-items: center;
+  border: 1px solid rgb(191, 188, 188);
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  justify-content: space-evenly;
+  width: 120px;
+}
+
+.divItemscart .intemsCart .quantity button:hover {
+  background-color: red;
+  color: white;
+  transform: scale(1.1);
+}
+
+.divItemscart .intemsCart .itemsCart__title {
+  border: 1px solid rgb(191, 188, 188);
+  border-radius: 5px;
+  color: rgba(190, 37, 37, 0.611);
+  font-size: 0.8rem;
+  font-weight: 600;
+  height: 100px;
+  margin: 20px;
+  padding: 10px;
+  width: 250px;
+}
