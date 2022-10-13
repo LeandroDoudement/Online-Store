@@ -14,15 +14,13 @@ class Router extends React.Component {
 
   getCartItensArray = (itemObj) => {
     const { cartItensArray } = this.state;
-    const arrayObjItens = [...cartItensArray];
-    arrayObjItens.push(itemObj);
+    const arrayObjItens = [...cartItensArray, itemObj];
     this.setState({
       cartItensArray: arrayObjItens,
     });
   };
 
   render() {
-    const { cartItensArray } = this.state;
     return (
       <Switch>
         <Route
@@ -34,9 +32,7 @@ class Router extends React.Component {
         />
         <Route
           path="/cart"
-          render={ () => (<ShoppingCart
-            cartItensArray={ cartItensArray }
-          />) }
+          render={ () => (<ShoppingCart />) }
         />
         <Route
           path="/productDetails/:id"

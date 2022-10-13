@@ -13,13 +13,35 @@ class Home extends React.Component {
       searchField: '',
       checkValue: false,
       searchResult: {},
+      arrayDeProdutos: [],
 
     };
   }
 
   getCartItens = (objItem) => {
     const { getCartItensArray } = this.props;
+    const { arrayDeProdutos } = this.state;
     getCartItensArray(objItem);
+    const produtos = JSON.parse(localStorage.getItem('cart')) || [];
+    const verificacao = produtos.find((element) => (
+      element.id === objItem.id
+    ));
+    let newProdutos = [];
+    if (verificacao) {
+      const newArray = produtos.filter((element) => (
+        element.id !== objItem.id
+      ));
+      verificacao.quantidade += 1;
+      newProdutos = [...newArray, verificacao];
+      localStorage.setItem('cart', JSON.stringify(newProdutos));
+    } else {
+      objItem.quantidade = 1;
+      newProdutos = [...produtos, objItem];
+      localStorage.setItem('cart', JSON.stringify(newProdutos));
+    }
+    this.setState({
+      arrayDeProdutos: newProdutos,
+    });
   };
 
   onChange = ({ target }) => {
