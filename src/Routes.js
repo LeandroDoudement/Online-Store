@@ -8,17 +8,17 @@ class Router extends React.Component {
   constructor() {
     super();
     this.state = {
-      cartItensArray: [],
+      // cartItensArray: [],
     };
   }
 
-  getCartItensArray = (itemObj) => {
-    const { cartItensArray } = this.state;
-    const arrayObjItens = [...cartItensArray, itemObj];
-    this.setState({
-      cartItensArray: arrayObjItens,
-    });
-  };
+  // getCartItensArray = (itemObj) => {
+  //   const { cartItensArray } = this.state;
+  //   const arrayObjItens = [...cartItensArray, itemObj];
+  //   this.setState({
+  //     cartItensArray: arrayObjItens,
+  //   });
+  // };
 
   render() {
     return (
@@ -26,9 +26,7 @@ class Router extends React.Component {
         <Route
           exact
           path="/"
-          render={ () => (<Home
-            getCartItensArray={ this.getCartItensArray }
-          />) }
+          render={ () => (<Home />) }
         />
         <Route
           path="/cart"
@@ -37,7 +35,7 @@ class Router extends React.Component {
         <Route
           path="/productDetails/:id"
           render={ (props) => (<ProductDetails
-            getCartItensArray={ this.getCartItensArray }
+            // getCartItensArray={ this.getCartItensArray }
             { ...props }
           />) }
         />

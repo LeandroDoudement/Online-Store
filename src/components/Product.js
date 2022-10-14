@@ -1,11 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import addItem from '../services/cart';
 
 class Products extends React.Component {
   render() {
     const { productName, productPrice, productImage,
-      getCartItens, objItem, productId } = this.props;
+      objItem, productId } = this.props;
     const thirty = 30;
     const twenty = 20;
     return (
@@ -25,7 +26,7 @@ class Products extends React.Component {
         <button
           data-testid="product-add-to-cart"
           type="button"
-          onClick={ () => getCartItens(objItem) }
+          onClick={ () => addItem(objItem) }
         >
           Adicionar ao carrinho
         </button>
@@ -38,7 +39,6 @@ Products.propTypes = {
   productName: propTypes.string.isRequired,
   productPrice: propTypes.number.isRequired,
   productImage: propTypes.string.isRequired,
-  getCartItens: propTypes.func.isRequired,
   objItem: propTypes.shape({
     title: propTypes.string,
     price: propTypes.number,

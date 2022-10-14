@@ -36,7 +36,7 @@ class ItemCart extends React.Component {
           <div className="quantity">
             <button
               type="button"
-              data-testid="product-increase-quantity"
+              data-testid="product-decrease-quantity"
               onClick={ () => diminuirQuantidade(id) }
             >
               -
@@ -45,7 +45,7 @@ class ItemCart extends React.Component {
             <p data-testid="shopping-cart-product-quantity">{quantidade}</p>
             <button
               type="button"
-              data-testid="product-decrease-quantity"
+              data-testid="product-increase-quantity"
               onClick={ () => aumentarQuantidade(id) }
             >
               +

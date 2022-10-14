@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
-import propTypes from 'prop-types';
+// import propTypes from 'prop-types';
 import Product from '../components/Product';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import Categories from '../components/Categories';
@@ -13,36 +13,9 @@ class Home extends React.Component {
       searchField: '',
       checkValue: false,
       searchResult: {},
-      arrayDeProdutos: [],
 
     };
   }
-
-  getCartItens = (objItem) => {
-    const { getCartItensArray } = this.props;
-    const { arrayDeProdutos } = this.state;
-    getCartItensArray(objItem);
-    const produtos = JSON.parse(localStorage.getItem('cart')) || [];
-    const verificacao = produtos.find((element) => (
-      element.id === objItem.id
-    ));
-    let newProdutos = [];
-    if (verificacao) {
-      const newArray = produtos.filter((element) => (
-        element.id !== objItem.id
-      ));
-      verificacao.quantidade += 1;
-      newProdutos = [...newArray, verificacao];
-      localStorage.setItem('cart', JSON.stringify(newProdutos));
-    } else {
-      objItem.quantidade = 1;
-      newProdutos = [...produtos, objItem];
-      localStorage.setItem('cart', JSON.stringify(newProdutos));
-    }
-    this.setState({
-      arrayDeProdutos: newProdutos,
-    });
-  };
 
   onChange = ({ target }) => {
     const { name, value } = target;
@@ -108,7 +81,6 @@ class Home extends React.Component {
         <div className="divHomeProducts">
           {checkValue ? searchResult.results.map((element, index) => (
             <Product
-              getCartItens={ this.getCartItens }
               objItem={ element }
               key={ index }
               productName={ element.title }
@@ -122,8 +94,8 @@ class Home extends React.Component {
   }
 }
 
-Home.propTypes = {
-  getCartItensArray: propTypes.func.isRequired,
-};
+// Home.propTypes = {
+//   getCartItensArray: propTypes.func.isRequired,
+// };
 
 export default Home;

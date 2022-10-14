@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { getProductById } from '../services/api';
+import addItem from '../services/cart';
 
 class ProductDetails extends React.Component {
   constructor() {
@@ -15,7 +16,7 @@ class ProductDetails extends React.Component {
   async componentDidMount() {
     const { match: { params: { id } } } = this.props;
     const productDetails = await getProductById(id);
-    this.setState({ product: [productDetails], loading: false });
+    this.setState({ product: productDetails, loading: false });
   }
 
   componentDidUpdate(prevProps) {
@@ -27,29 +28,35 @@ class ProductDetails extends React.Component {
 
   addCart = () => {
     const { product } = this.state;
-    const { getCartItensArray } = this.props;
-    console.log('Sou o product', product);
-    getCartItensArray(...product);
-    localStorage.setItem('cart', JSON.stringify(...product));
+    addItem(product);
   };
 
   render() {
     const { product, loading } = this.state;
-
+    if (loading) {
+      return <p>Carregando...</p>;
+    }
     return (
       <div className="productDetails">
-        {loading ? <p>Carregando...</p>
-          : product.map((element, index) => (
-            <div key={ index }>
-              <p data-testid="product-detail-name">{element.title}</p>
-              <p data-testid="product-detail-price">{element.price}</p>
-              <img
-                src={ element.thumbnail }
-                alt={ element.title }
-                data-testid="product-detail-image"
-              />
-            </div>
-          ))}
+        <div>
+          <p
+            data-testid="product-detail-name"
+          >
+            {product.title}
+
+          </p>
+          <p
+            data-testid="product-detail-price"
+          >
+            {product.price}
+
+          </p>
+          <img
+            src={ product.thumbnail }
+            alt={ product.title }
+            data-testid="product-detail-image"
+          />
+        </div>
         <button
           data-testid="product-detail-add-to-cart"
           type="button"
@@ -71,7 +78,7 @@ ProductDetails.propTypes = {
       id: propTypes.string,
     }),
   }).isRequired,
-  getCartItensArray: propTypes.func.isRequired,
+  // getCartItensArray: propTypes.func.isRequired,
 };
 
 export default ProductDetails;
