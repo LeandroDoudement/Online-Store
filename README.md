@@ -3,4 +3,6 @@
 - Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;
 
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/108767928/209697840-a5b84bfd-6748-4f8c-9e7f-90a40b35c860.gif)
+![Screenshot from 2022-12-28 15-00-30](https://user-images.githubusercontent.com/108767928/209853732-d370c8a7-93f4-4851-87c7-eac9c0e3f910.png)
+
+![Screenshot from 2022-12-28 15-00-55](https://user-images.githubusercontent.com/108767928/209853743-8620de54-6a5d-4d7f-92d3-d7abe77625d9.png)
